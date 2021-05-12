@@ -7,8 +7,14 @@
 
 import Foundation
 
+struct EventWrapper: Codable {
+    var resultCount: Int
+    var results: [Event]
+}
+
 struct Event: Codable {
     var events: EventDetail
+    var datetime_utc: String
 }
 
 struct EventDetail: Codable {
@@ -17,7 +23,6 @@ struct EventDetail: Codable {
 }
 
 struct Venue: Codable {
-    var name: String
     var display_location: String
 }
 

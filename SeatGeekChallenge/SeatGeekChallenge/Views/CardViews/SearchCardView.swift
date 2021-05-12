@@ -12,14 +12,9 @@ struct SearchCardView: View {
     var image: String = "image-not-found"
     var showName: String = "Show Name"
     var location: String = "Location"
-    var dateTime: Date = Date()
+    var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
     
-    func getDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .long
-        return formatter.string(from: date)
-    }
-    
+        
     var body: some View {
         VStack {
             HStack {
@@ -34,7 +29,7 @@ struct SearchCardView: View {
                         
                     Text(location)
                         
-                    Text(getDate(date: dateTime))
+                    Text(dateTime)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()

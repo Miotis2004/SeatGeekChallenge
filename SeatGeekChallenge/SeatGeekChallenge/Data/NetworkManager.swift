@@ -42,9 +42,13 @@ extension NetworkManager: Network {
             }
             
             do{
-                
+                let wrapper = try JSONDecoder().decode(EventWrapper.self, from: data)
+                completion(.success(wrapper.results))
+            } catch {
+                print(error)
+                completion(.failure(CustomError.decodeFailure))
             }
-        }
+        }.resume()
     }
     
     
