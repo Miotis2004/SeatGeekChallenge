@@ -9,20 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var nameData: String?
-    let vm = EventViewModel()
-    
-    func loadData() {
-        self.vm.callNetwork(name: nameData ?? "")
-    }
-    
-    var body: some View {
         
+    var body: some View {
+        Text("Hello World")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
