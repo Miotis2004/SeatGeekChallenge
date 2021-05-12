@@ -17,6 +17,7 @@
 		FD49635D264B319B00AD111E /* DetailsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49635C264B319B00AD111E /* DetailsCardView.swift */; };
 		FD496360264B410700AD111E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49635F264B410700AD111E /* NetworkManager.swift */; };
 		FD496362264B421F00AD111E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD496361264B421F00AD111E /* Event.swift */; };
+		FD496365264B4C5D00AD111E /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD496364264B4C5D00AD111E /* EventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FD49635C264B319B00AD111E /* DetailsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardView.swift; sourceTree = "<group>"; };
 		FD49635F264B410700AD111E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FD496361264B421F00AD111E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FD496364264B4C5D00AD111E /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		FD496329264B304200AD111E /* SeatGeekChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				FD496363264B4C3E00AD111E /* ViewModels */,
 				FD49635E264B40EB00AD111E /* Data */,
 				FD496358264B30BE00AD111E /* Utilities */,
 				FD496357264B308E00AD111E /* Models */,
@@ -188,6 +191,14 @@
 				FD49635F264B410700AD111E /* NetworkManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FD496363264B4C3E00AD111E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FD496364264B4C5D00AD111E /* EventViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 				FD49632B264B304200AD111E /* SeatGeekChallengeApp.swift in Sources */,
 				FD496360264B410700AD111E /* NetworkManager.swift in Sources */,
 				FD49635B264B318700AD111E /* SearchCardView.swift in Sources */,
+				FD496365264B4C5D00AD111E /* EventViewModel.swift in Sources */,
 				FD49635D264B319B00AD111E /* DetailsCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

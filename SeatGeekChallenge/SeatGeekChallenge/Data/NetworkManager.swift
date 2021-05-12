@@ -14,7 +14,7 @@ enum CustomError: Error {
 }
 
 protocol Network {
-    func loadResults(name: String, completion: @escaping (Result<[Event], Error>) -> Void)
+    func loadEventList(name: String, completion: @escaping (Result<[Event], Error>) -> Void)
 }
 
 final class NetworkManager {
@@ -28,11 +28,22 @@ final class NetworkManager {
 }
 
 extension NetworkManager: Network {
-    func loadResults(name: String, completion: @escaping (Result<[Event], Error>) -> Void) {
+    func loadEventList(name: String, completion: @escaping (Result<[Event], Error>) -> Void) {
         guard let url = URL(string: "https://api.seatgeek.com/2/events?client_id=MjE4OTUwMzZ8MTYyMDc3NDQxMS40MDEwMTA1&q=\(name)") else {
             print("Guard URL statement failed")
             completion(.failure(CustomError.urlFailure))
             return
+        }
+        
+        self.session.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion(.failure(CustomError.dataFailure))
+                return
+            }
+            
+            do{
+                
+            }
         }
     }
     
