@@ -10,6 +10,8 @@
 		FD1EFB17264D85F4005FCB9F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1EFB16264D85F4005FCB9F /* SearchBar.swift */; };
 		FD1EFB1B264D94AB005FCB9F /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1EFB1A264D94AB005FCB9F /* RemoteImage.swift */; };
 		FD1EFB1D264D9D4D005FCB9F /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1EFB1C264D9D4D005FCB9F /* ImageView.swift */; };
+		FD1EFB1F264DBCA9005FCB9F /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1EFB1E264DBCA9005FCB9F /* CardContainerView.swift */; };
+		FD1EFB22264DC348005FCB9F /* HideRowSeperatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1EFB21264DC348005FCB9F /* HideRowSeperatorModifier.swift */; };
 		FD49632B264B304200AD111E /* SeatGeekChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49632A264B304200AD111E /* SeatGeekChallengeApp.swift */; };
 		FD49632D264B304200AD111E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49632C264B304200AD111E /* ContentView.swift */; };
 		FD49632F264B304900AD111E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD49632E264B304900AD111E /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		FD1EFB16264D85F4005FCB9F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		FD1EFB1A264D94AB005FCB9F /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		FD1EFB1C264D9D4D005FCB9F /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		FD1EFB1E264DBCA9005FCB9F /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
+		FD1EFB21264DC348005FCB9F /* HideRowSeperatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideRowSeperatorModifier.swift; sourceTree = "<group>"; };
 		FD496327264B304200AD111E /* SeatGeekChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatGeekChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD49632A264B304200AD111E /* SeatGeekChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatGeekChallengeApp.swift; sourceTree = "<group>"; };
 		FD49632C264B304200AD111E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD1EFB20264DC32C005FCB9F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD1EFB21264DC348005FCB9F /* HideRowSeperatorModifier.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FD49631E264B304200AD111E = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 		FD496329264B304200AD111E /* SeatGeekChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				FD1EFB20264DC32C005FCB9F /* Helpers */,
 				FD496363264B4C3E00AD111E /* ViewModels */,
 				FD49635E264B40EB00AD111E /* Data */,
 				FD496358264B30BE00AD111E /* Utilities */,
@@ -160,6 +173,7 @@
 				FD496359264B316000AD111E /* CardViews */,
 				FD49632C264B304200AD111E /* ContentView.swift */,
 				FD1EFB16264D85F4005FCB9F /* SearchBar.swift */,
+				FD1EFB1E264DBCA9005FCB9F /* CardContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,7 +351,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD496362264B421F00AD111E /* Event.swift in Sources */,
+				FD1EFB22264DC348005FCB9F /* HideRowSeperatorModifier.swift in Sources */,
 				FD49632D264B304200AD111E /* ContentView.swift in Sources */,
+				FD1EFB1F264DBCA9005FCB9F /* CardContainerView.swift in Sources */,
 				FD49632B264B304200AD111E /* SeatGeekChallengeApp.swift in Sources */,
 				FD1EFB1B264D94AB005FCB9F /* RemoteImage.swift in Sources */,
 				FD49635B264B318700AD111E /* SearchCardView.swift in Sources */,
