@@ -8,25 +8,21 @@
 import Foundation
 
 struct EventWrapper: Codable {
-    var resultCount: Int
-    var results: [Event]
+    var events: [Event]
 }
 
-struct Event: Codable {
-    var events: EventDetail
+struct Event: Codable, Identifiable {
+    var id: Int
     var datetime_utc: String
-}
-
-struct EventDetail: Codable {
     var venue: Venue
-    var performer: Performer
+    var performers: [Performers]
 }
 
 struct Venue: Codable {
     var display_location: String
 }
 
-struct Performer: Codable {
+struct Performers: Codable {
     var name: String
     var image: String
 }

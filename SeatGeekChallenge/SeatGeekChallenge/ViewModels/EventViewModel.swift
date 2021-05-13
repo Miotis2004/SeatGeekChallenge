@@ -9,6 +9,8 @@ import SwiftUI
 
 class EventViewModel {
     
+    //@Binding var name: String
+    
     var networkManager: Network
     var eventArray: [Event]? {
         didSet {

@@ -18,10 +18,11 @@ struct SearchCardView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(image)
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .padding()
+//                Image(image)
+//                    .resizable()
+//                    .frame(width: 100, height: 100, alignment: .center)
+//                    .padding()
+                ImageView(url: image)
                 VStack {
                     Text(showName)
                         .font(.headline)
@@ -34,7 +35,10 @@ struct SearchCardView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
             }
+            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.05), radius: 20, x: 15, y: 15)
+            .clipShape(Capsule())
         }
+        
     }
 }
 

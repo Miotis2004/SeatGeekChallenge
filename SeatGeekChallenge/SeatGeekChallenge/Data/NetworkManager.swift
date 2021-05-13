@@ -17,14 +17,10 @@ protocol Network {
     func loadEventList(name: String, completion: @escaping (Result<[Event], Error>) -> Void)
 }
 
-final class NetworkManager {
-    static var shared = NetworkManager()
+class NetworkManager {
     
-    let session: URLSession
     
-    private init(session: URLSession = URLSession.shared) {
-        self.session = session
-    }
+    
 }
 
 extension NetworkManager: Network {
@@ -35,7 +31,7 @@ extension NetworkManager: Network {
             return
         }
         
-        self.session.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
                 completion(.failure(CustomError.dataFailure))
                 return
@@ -43,7 +39,10 @@ extension NetworkManager: Network {
             
             do{
                 let wrapper = try JSONDecoder().decode(EventWrapper.self, from: data)
-                completion(.success(wrapper.results))
+                DispatchQueue.main.async {
+                    completion(.success(wrapper.events))
+                }
+                
             } catch {
                 print(error)
                 completion(.failure(CustomError.decodeFailure))
