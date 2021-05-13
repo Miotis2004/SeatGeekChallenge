@@ -13,11 +13,14 @@ struct SearchCardView: View {
     var showName: String = "Show Name"
     var location: String = "Location"
     var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
+    
+    let dc = DateChanger()
             
     var body: some View {
         VStack {
             HStack {
                 ImageView(url: image)
+                    .frame(width: 100, height: 100, alignment: .center)
                 VStack {
                     Text(showName)
                         .font(.headline)
@@ -25,7 +28,7 @@ struct SearchCardView: View {
                         
                     Text(location)
                         
-                    Text(dateTime)
+                    Text(dc.stringToDate(dateString: dateTime))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()

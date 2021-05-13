@@ -14,7 +14,7 @@ struct ImageView: View {
     var body: some View {
         RemoteImage(url: url)
             .aspectRatio(contentMode: .fit)
-            .frame(width: 100)
+            .frame(maxWidth: .infinity)
     }
 }
 
