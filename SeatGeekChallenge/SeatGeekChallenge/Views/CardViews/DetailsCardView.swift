@@ -18,6 +18,20 @@ struct DetailsCardView: View {
     var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
     var id: Int32 = 0
     
+    @FetchRequest var likedEvents: FetchedResults<LikeEvent>
+    
+    init(image: String = "image-not-found", showName: String = "Show Name", location: String = "Location", dateTime: String = "TUE, 11 MAY 2021 8:00 PM", id: Int32 = 0) {
+        self.image = image
+        self.showName = showName
+        self.location = location
+        self.dateTime = dateTime
+        self.id = id
+    
+        let request: NSFetchRequest<LikeEvent> = LikeEvent.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \LikeEvent.eventId, ascending: true)]
+        request.predicate = NSPredicate(format: "eventId == \(id)")
+        self._likedEvents = FetchRequest(fetchRequest: request)
+    }
     
     let dc = DateChanger()
     
@@ -29,19 +43,23 @@ struct DetailsCardView: View {
                     .fontWeight(.bold)
                 Spacer()
                 Button(action: {
-                    let event = LikeEvent(context: managedObjectContext)
-                    event.eventId = id
-                    event.liked = !event.liked
-                    PersistenceController.shared.save()
+                    if let event = likedEvents.first {
+                        event.eventId = id
+                        event.liked.toggle()
+                        PersistenceController.shared.save()
+                    } else {
+                        let event = LikeEvent(context: managedObjectContext)
+                        event.eventId = id
+                        event.liked.toggle()
+                        PersistenceController.shared.save()
+                    }
                 }, label: {
-                    let event = LikeEvent(context: managedObjectContext)
-                    
-                    if !event.liked {
-                        Image(systemName: "heart")
+                    if let event = likedEvents.first, event.liked {
+                        Image(systemName: "heart.fill")
                             .font(.system(size: 24, weight: .regular))
                             .foregroundColor(.red)
                     } else {
-                        Image(systemName: "heart.fill")
+                        Image(systemName: "heart")
                             .font(.system(size: 24, weight: .regular))
                             .foregroundColor(.red)
                     }

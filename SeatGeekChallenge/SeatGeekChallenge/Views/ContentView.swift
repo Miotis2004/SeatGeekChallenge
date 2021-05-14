@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
+        
     @State var events = [Event]()
-    @State var text: String = "swift"
-    
+    @State var text: String = ""
+        
     var body: some View {
         SearchBar(text: $text)
             
-        
         NavigationView {
             List(events, id: \.id) { event in
                     
                         VStack {
                             NavigationLink(destination: DetailsCardView(image: event.performers[0].image, showName: event.performers[0].name, location: event.venue.display_location, dateTime: event.datetime_utc, id: Int32(event.id))) {
-                                CardContainerView(image: event.performers[0].image, showName: event.performers[0].name, location: event.venue.display_location, dateTime: event.datetime_utc, id: event.id)
+                                CardContainerView(image: event.performers[0].image, showName: event.performers[0].name, location: event.venue.display_location, dateTime: event.datetime_utc, id: Int32(event.id))
                             }
                         }
                 }

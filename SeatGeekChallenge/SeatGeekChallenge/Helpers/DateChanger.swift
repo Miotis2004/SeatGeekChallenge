@@ -13,13 +13,13 @@ struct DateChanger {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
         let newDate: Date = dateFormatter.date(from: dateString) ?? Date()
         
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "E dd MMM yyyy hh:mm"
+        formatter.dateFormat = "E, dd MMM yyyy h:mm a"
         
         let newDateString: String = formatter.string(from: newDate)
         
