@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DetailsCardView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     var image: String = "image-not-found"
     var showName: String = "Show Name"
     var location: String = "Location"
     var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
+    var id: Int32 = 0
+    
     
     let dc = DateChanger()
     
@@ -23,9 +28,24 @@ struct DetailsCardView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
-                Image(systemName: "heart")
-                    .font(.system(size: 24, weight: .regular))
-                    .foregroundColor(.red)
+                Button(action: {
+                    let event = LikeEvent(context: managedObjectContext)
+                    event.eventId = id
+                    event.liked = !event.liked
+                    PersistenceController.shared.save()
+                }, label: {
+                    let event = LikeEvent(context: managedObjectContext)
+                    
+                    if !event.liked {
+                        Image(systemName: "heart")
+                            .font(.system(size: 24, weight: .regular))
+                            .foregroundColor(.red)
+                    } else {
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 24, weight: .regular))
+                            .foregroundColor(.red)
+                    }
+                })
             }
             ImageView(url: image)
                 

@@ -22,6 +22,8 @@
 		FD49635D264B319B00AD111E /* DetailsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49635C264B319B00AD111E /* DetailsCardView.swift */; };
 		FD496362264B421F00AD111E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD496361264B421F00AD111E /* Event.swift */; };
 		FD56A47A264C8CC8001DFE85 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56A479264C8CC8001DFE85 /* ApiCall.swift */; };
+		FDD914C1264E419700BCEE9C /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDD914BF264E419700BCEE9C /* Main.xcdatamodeld */; };
+		FDD914C3264E425000BCEE9C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD914C2264E425000BCEE9C /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		FD49635C264B319B00AD111E /* DetailsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCardView.swift; sourceTree = "<group>"; };
 		FD496361264B421F00AD111E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FD56A479264C8CC8001DFE85 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
+		FDD914C0264E419700BCEE9C /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		FDD914C2264E425000BCEE9C /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				FD49632A264B304200AD111E /* SeatGeekChallengeApp.swift */,
+				FDD914C2264E425000BCEE9C /* PersistenceController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			children = (
 				FD56A479264C8CC8001DFE85 /* ApiCall.swift */,
 				FD1EFB1A264D94AB005FCB9F /* RemoteImage.swift */,
+				FDD914BF264E419700BCEE9C /* Main.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -356,9 +362,11 @@
 				FD49632B264B304200AD111E /* SeatGeekChallengeApp.swift in Sources */,
 				FD1EFB1B264D94AB005FCB9F /* RemoteImage.swift in Sources */,
 				FD49635B264B318700AD111E /* SearchCardView.swift in Sources */,
+				FDD914C1264E419700BCEE9C /* Main.xcdatamodeld in Sources */,
 				FD1EFB17264D85F4005FCB9F /* SearchBar.swift in Sources */,
 				FD1EFB1D264D9D4D005FCB9F /* ImageView.swift in Sources */,
 				FD56A47A264C8CC8001DFE85 /* ApiCall.swift in Sources */,
+				FDD914C3264E425000BCEE9C /* PersistenceController.swift in Sources */,
 				FD1EFB24264DEA44005FCB9F /* DateChanger.swift in Sources */,
 				FD49635D264B319B00AD111E /* DetailsCardView.swift in Sources */,
 			);
@@ -680,6 +688,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FDD914BF264E419700BCEE9C /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDD914C0264E419700BCEE9C /* Main.xcdatamodel */,
+			);
+			currentVersion = FDD914C0264E419700BCEE9C /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD49631F264B304200AD111E /* Project object */;
 }

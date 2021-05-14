@@ -13,6 +13,7 @@ struct SearchCardView: View {
     var showName: String = "Show Name"
     var location: String = "Location"
     var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
+    var id: Int = 0
     
     let dc = DateChanger()
             

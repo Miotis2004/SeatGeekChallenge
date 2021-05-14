@@ -13,12 +13,13 @@ struct CardContainerView: View {
     var showName: String = "Show Name"
     var location: String = "Location"
     var dateTime: String = "TUE, 11 MAY 2021 8:00 PM"
+    var id: Int = 0
     
     var body: some View {
         Button(action: {
             
         }, label: {
-            SearchCardView(image: image, showName: showName, location: location, dateTime: dateTime)
+            SearchCardView(image: image, showName: showName, location: location, dateTime: dateTime, id: id)
                 
         })
         .frame(minWidth: 0, maxWidth: .infinity)
